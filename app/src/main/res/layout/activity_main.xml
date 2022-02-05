@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="carProduct"
+            type="Integer" />
+        <variable
+            name="carPrice"
+            type="Integer" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/garage" />
+
+    <ImageView
+        android:id="@+id/img_car"
+        android:layout_width="249dp"
+        android:layout_height="375dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/car_one" />
+
+    <View
+        android:id="@+id/box_white"
+        android:layout_width="wrap_content"
+        android:layout_height="203dp"
+        android:layout_marginTop="2dp"
+        android:background="#321903"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/txt_buyed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="#934E07"
+        android:text="Car buyed"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_amout_products"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/box_white" />
+
+    <TextView
+        android:id="@+id/txt_amout_products"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#934E07"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="3dp"
+        android:text="@{carProduct.toString()}"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_amount_price"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/box_white" />
+
+    <TextView
+        android:id="@+id/txt_amount_price"
+        android:layout_width="wrap_content"
+        android:textColor="#BD6810"
+        android:layout_height="wrap_content"
+        android:text='@{"$" + carPrice.toString()}'
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>
